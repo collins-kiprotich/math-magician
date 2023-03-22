@@ -19,6 +19,7 @@
   display: flex;
   background: transparent;
   height: 3rem;
+  border-bottom: 1px solid grey;
 }
 
 .buttons {
