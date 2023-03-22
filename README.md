@@ -92,7 +92,7 @@ In order to run this project you need:
 ### Setup
 
 Clone this repository to your desired folder:
-- `https://github.com/collins-kiprotich/maths-magician.git`
+- `https://github.com/collins-kiprotich/math-magician.git`
 
 
 ### Install
