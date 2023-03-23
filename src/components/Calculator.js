@@ -1,14 +1,5 @@
 import React from 'react';
-import calculate from '../logic/calculate'
-
-// function Calculator() {
-//   return (
-//     <div className="MainBody">
-//       <div className="result">0</div>
-//       <Buttons />
-//     </div>
-//   );
-// }
+import calculate from '../logic/calculate';
 
 class Calculator extends React.Component {
   constructor(props) {
@@ -63,12 +54,11 @@ class Calculator extends React.Component {
           <button className="buttons" id="bigbtn" type="button" onClick={this.clickHandle}>0</button>
           <button className="buttons" type="button" onClick={this.clickHandle}>.</button>
           <button className="buttons operator" type="button" onClick={this.clickHandle}>=</button>
-        </div> 
+        </div>
       </div>
 
     );
   }
 }
-
 
 export default Calculator;
