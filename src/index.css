@@ -37,3 +37,17 @@
 #bigbtn {
   width: 50%;
 }
+
+.quote {
+  text-align: center;
+}
+
+.app {
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
