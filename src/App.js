@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <div className="app">
-        <Quote />
+        <Quote apiKey="cnTlCQ/IFnLNbxvOCXF7fQ==9kiKfPTsk03LKemN" />
         <Calculator />
       </div>
     </>

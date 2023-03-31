@@ -1,45 +1,56 @@
-import './Quotes.css';
-import { useEffect, useState } from 'react';
+//
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
-function Quotes() {
-  const [quote, setQuote] = useState({});
+const Quotes = ({ apiKey }) => {
+  const [quote, setQuote] = useState(undefined);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
-  const API_KEY = 'cnTlCQ/IFnLNbxvOCXF7fQ==9kiKfPTsk03LKemN';
   useEffect(() => {
-    fetch('https://api.api-ninjas.com/v1/quotes?category=happiness', {
-      headers: { 'X-Api-Key': API_KEY },
-      method: 'GET',
-      contentType: 'application/json',
-    }).then((response) => response.json()).then((result) => {
-      if (result.error) {
-        setQuote({ quote: 'An Error Occurred' });
-      } else {
-        setQuote(result[0]);
+    const fetchQuotes = async () => {
+      try {
+        const response = await fetch(
+          'https://api.api-ninjas.com/v1/quotes?category=happiness',
+          {
+            headers: { 'X-Api-Key': apiKey },
+            method: 'GET',
+            contentType: 'application/json',
+          },
+        );
+
+        const data = (await response.json())[0];
+
+        setQuote(data);
+      } catch (err) {
+        setError(true);
       }
-    });
+      setLoading(false);
+    };
+
+    fetchQuotes();
   }, []);
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error || !quote) {
+    return <div>Error: Could not fetch quote.</div>;
+  }
+
   return (
-  // eslint-disable-next-line no-nested-ternary
-    !quote.quote
-      ? (
-        <div className="loadingclip">
-          loading a quote....
-        </div>
-      )
-      : (quote.author
-        ? (
-          <div className="quotes">
-            <p>{quote.quote}</p>
-            <div>
-              &quot;
-              {quote.author}
-              &quot;
-            </div>
-          </div>
-        ) : (<div className="quotes"><p>{quote.quote}</p></div>)
-      )
+    <div>
+      <p className="quote">{quote.quote}</p>
+      <p>
+        <em>{quote.author}</em>
+      </p>
+    </div>
   );
-}
+};
+
+Quotes.propTypes = {
+  apiKey: PropTypes.string.isRequired,
+};
 
 export default Quotes;
