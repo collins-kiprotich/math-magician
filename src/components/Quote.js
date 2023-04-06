@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const Quotes = ({ apiKey }) => {
+const Quote = ({ apiKey }) => {
   const [quote, setQuote] = useState(undefined);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -48,8 +48,8 @@ const Quotes = ({ apiKey }) => {
   );
 };
 
-Quotes.propTypes = {
+Quote.propTypes = {
   apiKey: PropTypes.string.isRequired,
 };
 
-export default Quotes;
+export default Quote;
