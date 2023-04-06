@@ -1,0 +1,107 @@
+* {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.MainBody {
+  width: 500px;
+  background: rgb(214, 126, 126);
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 1px;
+  margin: 1% 0 0 auto;
+}
+
+.result {
+  background: rgb(77, 77, 77);
+  display: flex;
+  flex-direction: row-reverse;
+  color: white;
+  padding: 4%;
+  height: 1.5rem;
+}
+
+.num-symb {
+  display: flex;
+  background: transparent;
+  height: 4rem;
+}
+
+.buttons {
+  background: rgb(233, 233, 233);
+  width: 25%;
+  cursor: pointer;
+  border-width: 0 1px 0 0;
+  border-color: rgb(255, 255, 255);
+}
+
+.buttons:hover {
+  background: rgb(82, 82, 82);
+  color: white;
+}
+
+.operator {
+  background: rgb(255, 121, 44);
+}
+
+#bigbtn {
+  width: 50%;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+}
+
+.navigation ul {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation ul a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  background-color: rgb(247, 118, 5);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10%;
+  display: flex;
+  align-items: center;
+}
+
+.navigation ul a:hover {
+  opacity: 0.8;
+}
+
+.navigation ul a:active {
+  opacity: 0.4;
+}
+
+.CalcPage {
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.homepage,
+.quotes {
+  padding: 2%;
+}
+
+.homepage p {
+  font-size: 1.2rem;
+}
+
+.quotes p {
+  font-size: 2rem;
+  font-weight: 200;
+}

@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
+import { Link, Route, Routes } from 'react-router-dom';
+import Calculator from './components/Calculator';
+import Home from './components/Home';
+import Quote from './components/Quote';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <>
+    <nav className="navigation">
+      <h1>Math Magicians</h1>
+      <ul>
+        <Link to="/">Home</Link>
+        <Link to="/calculator">Calculator</Link>
+        <Link to="/quote">Quote</Link>
+      </ul>
+    </nav>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/calculator" element={<Calculator />} />
+      <Route path="/quote" element={<Quote apiKey="cnTlCQ/IFnLNbxvOCXF7fQ==9kiKfPTsk03LKemN" />} />
+    </Routes>
+  </>
+);
 
 export default App;
