@@ -28,7 +28,7 @@ const Quote = ({ apiKey }) => {
     };
 
     fetchQuotes();
-  }, []);
+  });
 
   if (loading) {
     return <div>Loading...</div>;
